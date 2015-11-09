@@ -33,6 +33,18 @@ gdjs.FirstCode.GDReferenceCarObjects1= [];
 gdjs.FirstCode.GDReferenceCarObjects2= [];
 gdjs.FirstCode.GDReferenceCarObjects3= [];
 gdjs.FirstCode.GDReferenceCarObjects4= [];
+gdjs.FirstCode.GDDebug1Objects1= [];
+gdjs.FirstCode.GDDebug1Objects2= [];
+gdjs.FirstCode.GDDebug1Objects3= [];
+gdjs.FirstCode.GDDebug1Objects4= [];
+gdjs.FirstCode.GDDebug2Objects1= [];
+gdjs.FirstCode.GDDebug2Objects2= [];
+gdjs.FirstCode.GDDebug2Objects3= [];
+gdjs.FirstCode.GDDebug2Objects4= [];
+gdjs.FirstCode.GDDebug3Objects1= [];
+gdjs.FirstCode.GDDebug3Objects2= [];
+gdjs.FirstCode.GDDebug3Objects3= [];
+gdjs.FirstCode.GDDebug3Objects4= [];
 
 gdjs.FirstCode.conditionTrue_0 = {val:false};
 gdjs.FirstCode.condition0IsTrue_0 = {val:false};
@@ -57,6 +69,18 @@ gdjs.FirstCode.GDReferenceCarObjects1.length = 0;
 gdjs.FirstCode.GDReferenceCarObjects2.length = 0;
 gdjs.FirstCode.GDReferenceCarObjects3.length = 0;
 gdjs.FirstCode.GDReferenceCarObjects4.length = 0;
+gdjs.FirstCode.GDDebug1Objects1.length = 0;
+gdjs.FirstCode.GDDebug1Objects2.length = 0;
+gdjs.FirstCode.GDDebug1Objects3.length = 0;
+gdjs.FirstCode.GDDebug1Objects4.length = 0;
+gdjs.FirstCode.GDDebug2Objects1.length = 0;
+gdjs.FirstCode.GDDebug2Objects2.length = 0;
+gdjs.FirstCode.GDDebug2Objects3.length = 0;
+gdjs.FirstCode.GDDebug2Objects4.length = 0;
+gdjs.FirstCode.GDDebug3Objects1.length = 0;
+gdjs.FirstCode.GDDebug3Objects2.length = 0;
+gdjs.FirstCode.GDDebug3Objects3.length = 0;
+gdjs.FirstCode.GDDebug3Objects4.length = 0;
 
 
 {
@@ -232,7 +256,7 @@ gdjs.FirstCode.condition0IsTrue_0.val = gdjs.evtTools.input.isMouseButtonPressed
 }if ( gdjs.FirstCode.condition0IsTrue_0.val ) {
 {
 {gdjs.FirstCode.conditionTrue_1 = gdjs.FirstCode.condition1IsTrue_0;
-gdjs.FirstCode.conditionTrue_1.val = context.triggerOnce(140239960521384);
+gdjs.FirstCode.conditionTrue_1.val = context.triggerOnce(140564049404008);
 }
 }}
 if (gdjs.FirstCode.condition1IsTrue_0.val) {
@@ -275,7 +299,35 @@ gdjs.FirstCode.condition0IsTrue_0.val = false;
 gdjs.FirstCode.condition0IsTrue_0.val = gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(0)) == 2;
 }if (gdjs.FirstCode.condition0IsTrue_0.val) {
 {runtimeScene.getGame().getVariables().getFromIndex(6).setNumber((( gdjs.FirstCode.GDcarObjects3.length === 0 ) ? 0 :gdjs.FirstCode.GDcarObjects3[0].getPointX("")));
+}
+{ //Subevents
+
+{
+
+gdjs.FirstCode.GDDebug1Objects4.createFrom(runtimeScene.getObjects("Debug1"));
+gdjs.FirstCode.GDDebug2Objects4.createFrom(runtimeScene.getObjects("Debug2"));
+
+gdjs.FirstCode.condition0IsTrue_0.val = false;
+{
+{gdjs.FirstCode.conditionTrue_1 = gdjs.FirstCode.condition0IsTrue_0;
+gdjs.FirstCode.conditionTrue_1.val = (gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(6)) < gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(5)));
+}
+}if (gdjs.FirstCode.condition0IsTrue_0.val) {
+{for(var i = 0, len = gdjs.FirstCode.GDDebug1Objects4.length ;i < len;++i) {
+    gdjs.FirstCode.GDDebug1Objects4[i].setString("Start = " + gdjs.evtTools.common.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(5)));
+}
+}{for(var i = 0, len = gdjs.FirstCode.GDDebug2Objects4.length ;i < len;++i) {
+    gdjs.FirstCode.GDDebug2Objects4[i].setString("Stop = " + gdjs.evtTools.common.getVariableString(runtimeScene.getGame().getVariables().getFromIndex(6)));
+}
+}{runtimeScene.getVariables().get("tmp").setNumber(gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(6)));
+}{runtimeScene.getGame().getVariables().getFromIndex(6).setNumber(gdjs.evtTools.common.getVariableNumber(runtimeScene.getGame().getVariables().getFromIndex(5)));
+}{runtimeScene.getGame().getVariables().getFromIndex(5).setNumber(gdjs.evtTools.common.getVariableNumber(runtimeScene.getVariables().get("tmp")));
 }}
+
+}
+
+} //End of subevents
+}
 
 }
 
